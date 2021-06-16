@@ -30,6 +30,10 @@ class Spot {
         self.postingUserID = postingUserID
         self.documentID = documentID
     }
+    // used to update at multiple places at the same time when initializing Spot with default values or to change number of properties
+    convenience init() {
+        self.init(name: "", address: "", averageRating: 0.0, numberOfReviews: 0, postingUserID: "", documentID: "")
+    }
     
     func saveData(completion: @escaping (Bool) -> ()) {
         let db = Firestore.firestore()

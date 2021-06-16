@@ -282,6 +282,11 @@
                                 <action selector="cancelButtonPressed:" destination="2py-tM-rKB" id="2NZ-6x-KHh"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hYW-tQ-Hdo">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="2py-tM-rKB" id="NP5-KL-BqZ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>

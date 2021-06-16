@@ -16,6 +16,7 @@
 		C96E469A2666AAF5001027C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96E46982666AAF5001027C1 /* Main.storyboard */; };
 		C96E469C2666AB23001027C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C96E469B2666AB23001027C1 /* Assets.xcassets */; };
 		C96E469F2666AB24001027C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C96E469D2666AB24001027C1 /* LaunchScreen.storyboard */; };
+		C972889E267A7829007EA30D /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C972889D267A7829007EA30D /* UIViewController+alert.swift */; };
 		C97332A72676629F0017109B /* SpotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97332A62676629F0017109B /* SpotListViewController.swift */; };
 		C97332AA267667540017109B /* SpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97332A9267667540017109B /* SpotTableViewCell.swift */; };
 		C97332AD267673AE0017109B /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97332AC267673AE0017109B /* SpotDetailViewController.swift */; };
@@ -36,6 +37,7 @@
 		C96E469B2666AB23001027C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C96E469E2666AB24001027C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C96E46A02666AB24001027C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C972889D267A7829007EA30D /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		C97332A62676629F0017109B /* SpotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewController.swift; sourceTree = "<group>"; };
 		C97332A9267667540017109B /* SpotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTableViewCell.swift; sourceTree = "<group>"; };
 		C97332AC267673AE0017109B /* SpotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				C97332A62676629F0017109B /* SpotListViewController.swift */,
 				C97332A9267667540017109B /* SpotTableViewCell.swift */,
 				C97332AC267673AE0017109B /* SpotDetailViewController.swift */,
+				C972889D267A7829007EA30D /* UIViewController+alert.swift */,
 				C96E46982666AAF5001027C1 /* Main.storyboard */,
 				C96E469B2666AB23001027C1 /* Assets.xcassets */,
 				C96842F32673F42000B3EB48 /* logo.jpg */,
@@ -250,6 +253,7 @@
 				C97332AA267667540017109B /* SpotTableViewCell.swift in Sources */,
 				C96B4FEB26790FCE007C7C7D /* Spot.swift in Sources */,
 				C96E46952666AAF5001027C1 /* SceneDelegate.swift in Sources */,
+				C972889E267A7829007EA30D /* UIViewController+alert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
