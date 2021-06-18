@@ -20,6 +20,7 @@
 		C97332A72676629F0017109B /* SpotListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97332A62676629F0017109B /* SpotListViewController.swift */; };
 		C97332AA267667540017109B /* SpotTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97332A9267667540017109B /* SpotTableViewCell.swift */; };
 		C97332AD267673AE0017109B /* SpotDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97332AC267673AE0017109B /* SpotDetailViewController.swift */; };
+		C978EE19267CFEDB00B5D95B /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978EE18267CFEDB00B5D95B /* Spots.swift */; };
 		C9A429E92666B1C9002174B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A429E82666B1C9002174B1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +42,7 @@
 		C97332A62676629F0017109B /* SpotListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotListViewController.swift; sourceTree = "<group>"; };
 		C97332A9267667540017109B /* SpotTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotTableViewCell.swift; sourceTree = "<group>"; };
 		C97332AC267673AE0017109B /* SpotDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotDetailViewController.swift; sourceTree = "<group>"; };
+		C978EE18267CFEDB00B5D95B /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		C9A429E82666B1C9002174B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -88,6 +90,7 @@
 				C96E46922666AAF5001027C1 /* AppDelegate.swift */,
 				C96E46942666AAF5001027C1 /* SceneDelegate.swift */,
 				C96B4FEA26790FCE007C7C7D /* Spot.swift */,
+				C978EE18267CFEDB00B5D95B /* Spots.swift */,
 				C96E46962666AAF5001027C1 /* LoginViewController.swift */,
 				C97332A62676629F0017109B /* SpotListViewController.swift */,
 				C97332A9267667540017109B /* SpotTableViewCell.swift */,
@@ -250,6 +253,7 @@
 				C96E46972666AAF5001027C1 /* LoginViewController.swift in Sources */,
 				C96E46932666AAF5001027C1 /* AppDelegate.swift in Sources */,
 				C97332AD267673AE0017109B /* SpotDetailViewController.swift in Sources */,
+				C978EE19267CFEDB00B5D95B /* Spots.swift in Sources */,
 				C97332AA267667540017109B /* SpotTableViewCell.swift in Sources */,
 				C96B4FEB26790FCE007C7C7D /* Spot.swift in Sources */,
 				C96E46952666AAF5001027C1 /* SceneDelegate.swift in Sources */,
