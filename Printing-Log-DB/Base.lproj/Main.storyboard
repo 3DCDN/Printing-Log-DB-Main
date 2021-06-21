@@ -274,7 +274,11 @@
                     </view>
                     <toolbarItems>
                         <barButtonItem systemItem="flexibleSpace" id="sNs-Oj-ewe"/>
-                        <barButtonItem title="Lookup Place" id="sy6-Vn-Tnz"/>
+                        <barButtonItem title="Lookup Place" id="sy6-Vn-Tnz">
+                            <connections>
+                                <action selector="lookupButtonPressed:" destination="2py-tM-rKB" id="qsS-wE-UsL"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="iXz-2T-3Wx">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="r9P-kN-eLq">

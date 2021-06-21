@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C39A9368590A56A76557DAAD /* Pods_Printing_Log_DB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAF8D71A468F2E267E5F839 /* Pods_Printing_Log_DB.framework */; };
 		C96842F42673F42100B3EB48 /* logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C96842F32673F42000B3EB48 /* logo.jpg */; };
+		C96AFD7F2681272E00370002 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96AFD7E2681272D00370002 /* APIKeys.swift */; };
 		C96B4FEB26790FCE007C7C7D /* Spot.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96B4FEA26790FCE007C7C7D /* Spot.swift */; };
 		C96E46932666AAF5001027C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E46922666AAF5001027C1 /* AppDelegate.swift */; };
 		C96E46952666AAF5001027C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C96E46942666AAF5001027C1 /* SceneDelegate.swift */; };
@@ -29,6 +30,7 @@
 		34EB7BC090B51656E45AFAA9 /* Pods-Printing-Log-DB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Printing-Log-DB.release.xcconfig"; path = "Target Support Files/Pods-Printing-Log-DB/Pods-Printing-Log-DB.release.xcconfig"; sourceTree = "<group>"; };
 		9AAF8D71A468F2E267E5F839 /* Pods_Printing_Log_DB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Printing_Log_DB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96842F32673F42000B3EB48 /* logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = logo.jpg; sourceTree = "<group>"; };
+		C96AFD7E2681272D00370002 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		C96B4FEA26790FCE007C7C7D /* Spot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spot.swift; sourceTree = "<group>"; };
 		C96E468F2666AAF5001027C1 /* Printing-Log-DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Printing-Log-DB.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96E46922666AAF5001027C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				C97332A9267667540017109B /* SpotTableViewCell.swift */,
 				C97332AC267673AE0017109B /* SpotDetailViewController.swift */,
 				C972889D267A7829007EA30D /* UIViewController+alert.swift */,
+				C96AFD7E2681272D00370002 /* APIKeys.swift */,
 				C96E46982666AAF5001027C1 /* Main.storyboard */,
 				C96E469B2666AB23001027C1 /* Assets.xcassets */,
 				C96842F32673F42000B3EB48 /* logo.jpg */,
@@ -255,6 +258,7 @@
 				C97332AD267673AE0017109B /* SpotDetailViewController.swift in Sources */,
 				C978EE19267CFEDB00B5D95B /* Spots.swift in Sources */,
 				C97332AA267667540017109B /* SpotTableViewCell.swift in Sources */,
+				C96AFD7F2681272E00370002 /* APIKeys.swift in Sources */,
 				C96B4FEB26790FCE007C7C7D /* Spot.swift in Sources */,
 				C96E46952666AAF5001027C1 /* SceneDelegate.swift in Sources */,
 				C972889E267A7829007EA30D /* UIViewController+alert.swift in Sources */,
