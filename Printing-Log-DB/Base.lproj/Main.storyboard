@@ -149,11 +149,11 @@
         <scene sceneID="eFf-Zc-KWx">
             <objects>
                 <viewController id="2py-tM-rKB" customClass="SpotDetailViewController" customModule="Printing_Log_DB" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="0p2-9h-3qb">
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="0p2-9h-3qb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcI-wX-ZSq">
+                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BcI-wX-ZSq">
                                 <rect key="frame" x="0.0" y="88" width="414" height="380"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Restaurant Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9W-eD-IO4">
@@ -240,25 +240,32 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                     </button>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LqY-lF-XZF">
+                                        <rect key="frame" x="0.0" y="62" width="414" height="180"/>
+                                    </mapView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Dto-OY-Zq1" secondAttribute="trailing" id="1Da-px-WGB"/>
                                     <constraint firstAttribute="trailing" secondItem="S5o-tl-778" secondAttribute="trailing" constant="8" id="8dr-zz-Zgb"/>
+                                    <constraint firstAttribute="trailing" secondItem="LqY-lF-XZF" secondAttribute="trailing" id="9Pr-Fe-Rmp"/>
                                     <constraint firstAttribute="trailing" secondItem="h9W-eD-IO4" secondAttribute="trailing" constant="8" id="AJD-wh-GVs"/>
                                     <constraint firstAttribute="height" constant="380" id="AoQ-Kd-g6G"/>
                                     <constraint firstItem="v8e-Kj-YXr" firstAttribute="top" secondItem="h9W-eD-IO4" secondAttribute="bottom" constant="2" id="M1W-hh-Qvq"/>
                                     <constraint firstItem="S5o-tl-778" firstAttribute="leading" secondItem="KgN-pT-gBx" secondAttribute="trailing" constant="8" id="Qg6-MV-XJm"/>
+                                    <constraint firstItem="Dto-OY-Zq1" firstAttribute="top" secondItem="LqY-lF-XZF" secondAttribute="bottom" id="RHN-Ax-UUk"/>
                                     <constraint firstItem="KgN-pT-gBx" firstAttribute="top" secondItem="Dto-OY-Zq1" secondAttribute="bottom" constant="4" id="S2N-mG-K5Y"/>
                                     <constraint firstItem="S5o-tl-778" firstAttribute="top" secondItem="Dto-OY-Zq1" secondAttribute="bottom" constant="4" id="Tgm-K9-R0h"/>
                                     <constraint firstItem="Hrg-Kh-yIS" firstAttribute="leading" secondItem="BcI-wX-ZSq" secondAttribute="leading" constant="8" id="XWk-bh-0bA"/>
                                     <constraint firstItem="h9W-eD-IO4" firstAttribute="leading" secondItem="BcI-wX-ZSq" secondAttribute="leading" constant="8" id="Ytb-iT-e3n"/>
                                     <constraint firstItem="h9W-eD-IO4" firstAttribute="top" secondItem="BcI-wX-ZSq" secondAttribute="top" constant="8" id="dm9-cj-jok"/>
+                                    <constraint firstItem="LqY-lF-XZF" firstAttribute="top" secondItem="v8e-Kj-YXr" secondAttribute="bottom" constant="2" id="kSw-VU-2t0"/>
                                     <constraint firstAttribute="trailing" secondItem="v8e-Kj-YXr" secondAttribute="trailing" constant="8" id="oP8-3S-Hly"/>
                                     <constraint firstItem="Hrg-Kh-yIS" firstAttribute="top" secondItem="Dto-OY-Zq1" secondAttribute="bottom" constant="8" id="q16-fv-r4N"/>
                                     <constraint firstItem="V3z-yY-gUq" firstAttribute="top" secondItem="Dto-OY-Zq1" secondAttribute="bottom" constant="6" id="rjR-qD-ted"/>
                                     <constraint firstItem="Dto-OY-Zq1" firstAttribute="leading" secondItem="BcI-wX-ZSq" secondAttribute="leading" id="s0I-9h-g7L"/>
                                     <constraint firstItem="v8e-Kj-YXr" firstAttribute="leading" secondItem="BcI-wX-ZSq" secondAttribute="leading" constant="8" id="vq3-Vq-AOV"/>
+                                    <constraint firstItem="LqY-lF-XZF" firstAttribute="leading" secondItem="BcI-wX-ZSq" secondAttribute="leading" id="wcm-qZ-PCm"/>
                                     <constraint firstItem="Dto-OY-Zq1" firstAttribute="top" secondItem="BcI-wX-ZSq" secondAttribute="top" constant="242" id="xff-qI-Ggs"/>
                                     <constraint firstItem="V3z-yY-gUq" firstAttribute="leading" secondItem="Hrg-Kh-yIS" secondAttribute="trailing" id="yH0-Kj-sSX"/>
                                 </constraints>
@@ -295,6 +302,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressTextField" destination="v8e-Kj-YXr" id="v95-z3-Ea2"/>
+                        <outlet property="mapView" destination="LqY-lF-XZF" id="tGb-6d-aGx"/>
                         <outlet property="nameTextField" destination="h9W-eD-IO4" id="g8o-8u-gBf"/>
                         <outlet property="ratingDetailLabel" destination="V3z-yY-gUq" id="rEb-0O-P9g"/>
                     </connections>
