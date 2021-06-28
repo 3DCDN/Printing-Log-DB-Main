@@ -119,6 +119,9 @@
                                 </segments>
                                 <color key="tintColor" name="TextColor"/>
                                 <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="sortSegmentPressed:" destination="afu-Sa-BqW" eventType="valueChanged" id="69k-tV-fm7"/>
+                                </connections>
                             </segmentedControl>
                         </barButtonItem>
                     </toolbarItems>
