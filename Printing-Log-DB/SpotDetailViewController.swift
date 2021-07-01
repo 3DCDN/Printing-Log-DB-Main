@@ -10,19 +10,26 @@ import GooglePlaces
 import MapKit
 import Contacts
 
-class SpotDetailViewController: UIViewController {
+class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var ratingDetailLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
-    
+    @IBOutlet weak var tableView: UITableView!
+    // in order to get some cells to show up to see how our tableview scrolls with a header
+    // we need to create a bogus array to hold some reviews?
     var spot: Spot!
     var regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
+    var reviews: [String] = ["Tasty","Awful","Tasty","Awful","Tasty","Awful","Tasty","Awful","Tasty","Awful","Tasty","Awful","Tasty","Awful"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         getLocation()
         if spot == nil {
             spot = Spot()
@@ -182,3 +189,14 @@ extension SpotDetailViewController: CLLocationManagerDelegate {
         print("ERROR: \(error.localizedDescription). Failed to get device location.")
     }
 } // last line of extension
+
+extension SpotDetailViewController {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath)
+        return cell
+    }
+}
