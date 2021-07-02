@@ -197,6 +197,7 @@ extension SpotDetailViewController {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath)
+        //cell.textLabel?.text = "Test #\(indexPath.row)"
         return cell
     }
 }
