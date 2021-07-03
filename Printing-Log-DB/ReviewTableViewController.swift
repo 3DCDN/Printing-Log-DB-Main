@@ -1,0 +1,38 @@
+//
+//  ReviewTableViewController.swift
+//  Printing-Log-DB
+//
+//  Created by XCodeClub on 2021-07-03.
+//
+
+import UIKit
+
+class ReviewTableViewController: UITableViewController {
+
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var postedByLabel: UILabel!
+    @IBOutlet weak var buttonsBackgroundView: UIView!
+    @IBOutlet weak var reviewTitleField: UITextField!    
+    @IBOutlet weak var reviewDateLabel: UILabel!
+    @IBOutlet weak var reviewTextView: UITextView!
+    @IBOutlet weak var deleteButton: UIButton!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    @IBAction func reviewTitleChanged(_ sender: UITextField) {
+    }
+    @IBAction func reviewTitleDonePressed(_ sender: UITextField) {
+    }
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+    }
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
+}
