@@ -28,6 +28,11 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // hide the keyboard if we tap outside of a field
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+        
         tableView.delegate = self
         tableView.dataSource = self
         getLocation()
@@ -81,11 +86,15 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
         leaveViewController()
     }
-    @IBAction func lookupButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func locationButtonPressed(_ sender: UIBarButtonItem) {
         let autocompleteController = GMSAutocompleteViewController()
             autocompleteController.delegate = self
         // Display the autocomplete view controller.
             present(autocompleteController, animated: true, completion: nil)
+    }
+    @IBAction func ratingButtonPressed(_ sender: UIButton) {
+        //TODO: eventually check if spot was saved. If it was not saved, save it and segue if save was successful. Otherwise, if it was saved successfully segue as below:
+        performSegue(withIdentifier: "AddReview", sender: nil)
     }
 }
 extension SpotDetailViewController: GMSAutocompleteViewControllerDelegate {
