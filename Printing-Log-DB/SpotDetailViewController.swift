@@ -24,7 +24,7 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     var spot: Spot!
     var regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
-    var reviews: [String] = ["Tasty","Awful","Tasty","Awful","Tasty","Awful","Tasty","Awful","Tasty","Awful","Tasty","Awful","Tasty","Awful"]
+    var reviews: Reviews!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,16 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             spot = Spot()
         }
         setupMapView()
+        reviews = Reviews() // Eventually load data in updateUserInterface
         updateUserInterface()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reviews.loadData(spot: spot) {
+            self.tableView.reloadData()
+        }
+    }
+    
     func setupMapView() {
         let region = MKCoordinateRegion(center: spot.coordinate, latitudinalMeters: regionDistance, longitudinalMeters: regionDistance)
         mapView.setRegion(region, animated: true)
@@ -61,6 +69,36 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         spot.address = addressTextField.text!
         
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        updateFromInterface() // update data before passing it over
+        switch segue.identifier ?? "" {
+        case "AddReview":
+            let navigationController = segue.destination as! UINavigationController
+            let destination = navigationController.viewControllers.first as! ReviewTableViewController
+            destination.spot = spot
+        case "ShowReview":
+            let destination = segue.destination as! ReviewTableViewController
+            let selectedIndexPath = tableView!.indexPathForSelectedRow
+            destination.review = reviews.reviewArray[selectedIndexPath!.row]
+            destination.spot = spot
+        default:
+            print("ERROR: Couldn't find a segue identifier for \(String(describing: segue.identifier))")
+        }
+    }
+    
+    func saveCancelAlert(title: String, message: String, segueidentifier: String){
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
+            self.spot.saveData { (success) in
+                self.performSegue(withIdentifier: segueidentifier, sender: nil)
+            }
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(saveAction)
+        alertController.addAction(cancelAction)
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func leaveViewController() {
         let isPresentingInAddMode = presentingViewController is UINavigationController
         if isPresentingInAddMode {
@@ -93,7 +131,7 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             present(autocompleteController, animated: true, completion: nil)
     }
     @IBAction func ratingButtonPressed(_ sender: UIButton) {
-        //TODO: eventually check if spot was saved. If it was not saved, save it and segue if save was successful. Otherwise, if it was saved successfully segue as below:
+        saveCancelAlert(title: "This Venue Has Not Been Saved", message: "You must save this venue before you can review it", segueidentifier: "AddReview")
         performSegue(withIdentifier: "AddReview", sender: nil)
     }
 }
@@ -201,12 +239,12 @@ extension SpotDetailViewController: CLLocationManagerDelegate {
 
 extension SpotDetailViewController {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviews.count
+        return reviews.reviewArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath)
-        //cell.textLabel?.text = "Test #\(indexPath.row)"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! SpotReviewTableViewCell
+        cell.review = reviews.reviewArray[indexPath.row]
         return cell
     }
 }

@@ -281,7 +281,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewCell" id="84d-vP-6bj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewCell" id="84d-vP-6bj" customClass="SpotReviewTableViewCell" customModule="Printing_Log_DB" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="408" width="414" height="43.666667938232422"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="84d-vP-6bj" id="7es-HP-7YF">
@@ -368,6 +368,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="reviewTextLabel" destination="qoe-T6-qFh" id="xSq-6R-LBt"/>
+                                            <outlet property="reviewTitleLabel" destination="RAD-3q-zoo" id="EsG-wQ-vfB"/>
                                             <segue destination="Bqp-i4-Acf" kind="show" identifier="ShowReview" id="GIG-I8-qi2"/>
                                         </connections>
                                     </tableViewCell>

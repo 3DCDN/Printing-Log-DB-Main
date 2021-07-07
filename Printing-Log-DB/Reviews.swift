@@ -15,9 +15,12 @@ class Reviews {
     init() {
         db = Firestore.firestore()
     }
-    
-    func loadData(completed: @escaping () -> ()){
-        db.collection("spots").document(self.reviewArray.ID).collection(Reviews).addSnapshotListener { (querySnapshot, error) in
+     
+    func loadData(spot: Spot, completed: @escaping () -> ()){
+        guard spot.documentID != "" else {
+            return
+        }
+        db.collection("spots").document(spot.documentID).collection("reviews").addSnapshotListener { (querySnapshot, error) in
             guard error == nil else {
                 print("ERROR: adding the snapshot listenener \(error!.localizedDescription)")
                 return completed()
@@ -27,14 +30,12 @@ class Reviews {
             // there are querySnapshot!.documents.count documents in the snapshot
             for document in querySnapshot!.documents {
                 // You'll have to make sure you have a dictionary initializer in the singular class
-                let review = Reviews(dictionary: document.data())
+                let review = Review(dictionary: document.data())
                 review.documentID = document.documentID
-                self.reviewArray.append(spot)
+                self.reviewArray.append(review)
                 
             }
             completed()
         }
     }
-    
-    
 }
