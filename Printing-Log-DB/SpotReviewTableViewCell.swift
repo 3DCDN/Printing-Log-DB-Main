@@ -20,6 +20,7 @@ class SpotReviewTableViewCell: UITableViewCell {
             reviewTextLabel.text = review.text
             
             for starImage in starImageCollection {
+                // tags start at 0
                 let imageName = starImage.tag < review.rating ? "star.fill" : "star"
                 starImage.image = UIImage(systemName: imageName)
                 starImage.tintColor = starImage.tag < review.rating ? .systemRed : .darkText
