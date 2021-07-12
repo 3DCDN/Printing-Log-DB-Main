@@ -10,6 +10,8 @@ import Firebase
 
 private let dateFormatter: DateFormatter = {
     let dateFormatter = DateFormatter()
+    // TODO: Change the dateFormatter to DD/MM/YYYY
+    // TODO: Change the timeFormatter to HH:MM:SS
     dateFormatter.dateStyle = .medium
     dateFormatter.timeStyle = .none
     return dateFormatter
@@ -42,8 +44,6 @@ class ReviewTableViewController: UITableViewController {
             review.rating = rating
         }
     }
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard spot != nil else {
@@ -54,7 +54,6 @@ class ReviewTableViewController: UITableViewController {
             review = Review() // convenience init will create initial data if review == nil
         }
         updateUserInterface()
-
     }
     
     func updateUserInterface(){
