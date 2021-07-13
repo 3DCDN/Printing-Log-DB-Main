@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Printing_Log_DB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -34,7 +34,7 @@
             <objects>
                 <viewController id="afu-Sa-BqW" customClass="SpotListViewController" customModule="Printing_Log_DB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kLn-UX-aB3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YNm-Da-9HO">
@@ -165,14 +165,19 @@
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Restaurant Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h9W-eD-IO4">
                                             <rect key="frame" x="8" y="8" width="398" height="33"/>
+                                            <color key="backgroundColor" name="UI Element Background"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="GPQ-JJ-a9e"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="AvenirNextCondensed-Bold" family="Avenir Next Condensed" pointSize="24"/>
                                             <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <action selector="nameFieldChanged:" destination="2py-tM-rKB" eventType="editingChanged" id="TyR-eM-nkd"/>
+                                            </connections>
                                         </textField>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Address" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v8e-Kj-YXr">
                                             <rect key="frame" x="8" y="43" width="398" height="17"/>
+                                            <color key="backgroundColor" name="UI Element Background"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="17" id="Smu-GL-w5z"/>
                                             </constraints>
@@ -404,7 +409,7 @@
                                 <action selector="cancelButtonPressed:" destination="2py-tM-rKB" id="2NZ-6x-KHh"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="hYW-tQ-Hdo">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="hYW-tQ-Hdo">
                             <connections>
                                 <action selector="saveButtonPressed:" destination="2py-tM-rKB" id="NP5-KL-BqZ"/>
                             </connections>
@@ -413,9 +418,11 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="addressTextField" destination="v8e-Kj-YXr" id="v95-z3-Ea2"/>
+                        <outlet property="cancelBarButton" destination="r9P-kN-eLq" id="aar-17-cXI"/>
                         <outlet property="mapView" destination="LqY-lF-XZF" id="tGb-6d-aGx"/>
                         <outlet property="nameTextField" destination="h9W-eD-IO4" id="g8o-8u-gBf"/>
                         <outlet property="ratingDetailLabel" destination="V3z-yY-gUq" id="rEb-0O-P9g"/>
+                        <outlet property="saveBarButton" destination="hYW-tQ-Hdo" id="j1B-yr-B6V"/>
                         <outlet property="tableView" destination="zaT-Vg-E6W" id="XmY-1p-ljW"/>
                         <segue destination="cvN-Gq-Nfm" kind="presentation" identifier="AddReview" modalPresentationStyle="fullScreen" id="KPh-vc-rlg"/>
                     </connections>

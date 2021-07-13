@@ -19,6 +19,9 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var ratingDetailLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var saveBarButton: UIBarButtonItem!
+    @IBOutlet weak var cancelBarButton: UIBarButtonItem!
+    
     // in order to get some cells to show up to see how our tableview scrolls with a header
     // we need to create a bogus array to hold some reviews?
     var spot: Spot!
@@ -109,6 +112,17 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
     }
+    
+    @IBAction func nameFieldChanged(_ sender: UITextField) {
+        // prevent a title of blank spaces from being saved
+        let noSpacews = nameTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        if noSpacews != "" {
+            saveBarButton.isEnabled = true
+        } else {
+            saveBarButton.isEnabled = false
+        }
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         updateFromInterface()
         spot.saveData { (success) in
