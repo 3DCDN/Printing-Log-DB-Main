@@ -41,6 +41,11 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         getLocation()
         if spot == nil {
             spot = Spot()
+        } else {
+            disableTextEditing()
+            saveBarButton.hide()
+            cancelBarButton.hide()
+            navigationController?.setToolbarHidden(true, animated: true)
         }
         setupMapView()
         reviews = Reviews() // Eventually load data in updateUserInterface
@@ -72,6 +77,16 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         spot.address = addressTextField.text!
         
     }
+    
+    func disableTextEditing() {
+        nameTextField.isEnabled = false
+        addressTextField.isEnabled = false
+        nameTextField.backgroundColor = .clear
+        addressTextField.backgroundColor = .clear
+        nameTextField.borderStyle = .none
+        addressTextField.borderStyle = .none
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         updateFromInterface() // update data before passing it over
         switch segue.identifier ?? "" {
@@ -93,6 +108,10 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "Save", style: .default) { (_) in
             self.spot.saveData { (success) in
+                self.saveBarButton.title = "Done"
+                self.cancelBarButton.hide()
+                self.navigationController?.setToolbarHidden(true, animated: true)
+                self.disableTextEditing()
                 self.performSegue(withIdentifier: segueidentifier, sender: nil)
             }
         }
