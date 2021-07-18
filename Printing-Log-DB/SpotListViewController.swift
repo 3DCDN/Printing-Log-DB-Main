@@ -2,7 +2,7 @@
 //  SpotListViewController.swift
 //  Printing-Log-DB
 //
-//  Created by XCodeClub on 2021-06-13.
+//  Created by Rich St.Onge on 2021-06-13.
 //
 
 import UIKit

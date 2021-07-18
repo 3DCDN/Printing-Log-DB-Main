@@ -2,7 +2,7 @@
 //  ReviewTableViewController.swift
 //  Printing-Log-DB
 //
-//  Created by XCodeClub on 2021-07-03.
+//  Created by Rich St.Onge on 2021-07-03.
 //
 
 import UIKit

@@ -2,7 +2,7 @@
 //  UIBarButtonItem+hide.swift
 //  Printing-Log-DB
 //
-//  Created by XCodeClub on 2021-07-12.
+//  Created by Rich St.Onge on 2021-07-12.
 //
 
 import UIKit

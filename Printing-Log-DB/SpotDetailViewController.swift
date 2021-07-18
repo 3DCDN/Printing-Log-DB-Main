@@ -2,7 +2,7 @@
 //  SpotDetailViewController.swift
 //  Printing-Log-DB
 //
-//  Created by XCodeClub on 2021-06-13.
+//  Created by Rich St.Onge on 2021-06-13.
 //
 
 import UIKit
@@ -57,6 +57,10 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if spot.documentID != "" {
+            self.navigationController?.setToolbarHidden(true, animated: true)
+        }
+        
         reviews.loadData(spot: spot) {
             self.tableView.reloadData()
         }

@@ -2,7 +2,7 @@
 //  Spot.swift
 //  Printing-Log-DB
 //
-//  Created by XCodeClub on 2021-06-15.
+//  Created by Rich St.Onge on 2021-06-15.
 //
 
 import Foundation

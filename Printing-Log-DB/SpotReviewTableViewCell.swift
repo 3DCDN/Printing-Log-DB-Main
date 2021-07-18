@@ -2,7 +2,7 @@
 //  SpotReviewTableViewCell.swift
 //  Printing-Log-DB
 //
-//  Created by XCodeClub on 2021-07-07.
+//  Created by Rich St.Onge on 2021-07-07.
 //
 
 import UIKit
