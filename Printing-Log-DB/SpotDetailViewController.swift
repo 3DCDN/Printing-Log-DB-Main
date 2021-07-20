@@ -10,7 +10,7 @@ import GooglePlaces
 import MapKit
 import Contacts
 
-class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate {
     
     
 
@@ -333,7 +333,8 @@ extension SpotDetailViewController {
         return cell
     }
 }
-extension SpotDetailViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+// setup ImagePickerController access
+extension SpotDetailViewController: UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         photo = Photo()
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
@@ -350,7 +351,7 @@ extension SpotDetailViewController: UIImagePickerControllerDelegate, UINavigatio
         dismiss(animated: true, completion: nil)
     }
     func accessPhotoLibrary() {
-        imagePickerController.sourceType = .camera
+        imagePickerController.sourceType = .photoLibrary
         present(imagePickerController, animated: true, completion: nil)
     }
     func accessCamera() {

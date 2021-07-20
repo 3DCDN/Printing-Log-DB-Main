@@ -86,6 +86,8 @@
 	<key>NSCameraUsageDescription</key>
 	<string>3D Printing Log will need to access your camera if you&apos;d like to add a photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
+	<string>3D Printing Log will need to access your photo library if you&apos;d like to use a photo for a review</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>3D Printing Log will need to access your photo library if you&apos;d like to add a photo</string>
 </dict>
 </plist>
