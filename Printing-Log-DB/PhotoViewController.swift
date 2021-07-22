@@ -73,7 +73,8 @@ class PhotoViewController: UIViewController {
     }
     
     func updateFromUserInterface() {
-        
+        photo.description = descriptionTextView.text!
+        photo.image = photoImageView.image!
         
     }
     

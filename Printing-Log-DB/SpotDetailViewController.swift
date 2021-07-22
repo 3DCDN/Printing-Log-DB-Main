@@ -19,6 +19,7 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var ratingDetailLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var saveBarButton: UIBarButtonItem!
     @IBOutlet weak var cancelBarButton: UIBarButtonItem!
     
@@ -29,6 +30,7 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     var regionDistance: CLLocationDegrees = 750.0
     var locationManager: CLLocationManager!
     var reviews: Reviews!
+    var photos:Photos!
     var imagePickerController = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -40,6 +42,8 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
         tableView.delegate = self
         tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
         imagePickerController.delegate = self
         
         getLocation()
@@ -52,7 +56,8 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             navigationController?.setToolbarHidden(true, animated: true)
         }
         setupMapView()
-        reviews = Reviews() // Eventually load data in updateUserInterface
+        reviews = Reviews()
+        photos = Photos()
         updateUserInterface()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -63,6 +68,9 @@ class SpotDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
         reviews.loadData(spot: spot) {
             self.tableView.reloadData()
+        }
+        photos.loadData(spot: spot) {
+            self.collectionView.reloadData()
         }
     }
     
@@ -333,6 +341,20 @@ extension SpotDetailViewController {
         return cell
     }
 }
+extension SpotDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return photos.photoArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let photoCell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as! SpotPhotoCollectionViewCell
+        photoCell.photo = photos.photoArray[indexPath.row]
+        return photoCell
+    }
+    
+    
+}
+
 // setup ImagePickerController access
 extension SpotDetailViewController: UINavigationControllerDelegate {
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

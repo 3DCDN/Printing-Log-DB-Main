@@ -30,6 +30,8 @@
 		C978EE19267CFEDB00B5D95B /* Spots.swift in Sources */ = {isa = PBXBuildFile; fileRef = C978EE18267CFEDB00B5D95B /* Spots.swift */; };
 		C97C37E2269CD62300C6DFEC /* UIView+addBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C37E1269CD62300C6DFEC /* UIView+addBorder.swift */; };
 		C97C37E5269CD76600C6DFEC /* UIBarButtonItem+hide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97C37E4269CD76600C6DFEC /* UIBarButtonItem+hide.swift */; };
+		C98E367C26A8BD870059C6FC /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E367B26A8BD870059C6FC /* Photos.swift */; };
+		C98E367F26A8C50B0059C6FC /* SpotPhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E367E26A8C50B0059C6FC /* SpotPhotoCollectionViewCell.swift */; };
 		C9A429E92666B1C9002174B1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9A429E82666B1C9002174B1 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,8 @@
 		C978EE18267CFEDB00B5D95B /* Spots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spots.swift; sourceTree = "<group>"; };
 		C97C37E1269CD62300C6DFEC /* UIView+addBorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addBorder.swift"; sourceTree = "<group>"; };
 		C97C37E4269CD76600C6DFEC /* UIBarButtonItem+hide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+hide.swift"; sourceTree = "<group>"; };
+		C98E367B26A8BD870059C6FC /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
+		C98E367E26A8C50B0059C6FC /* SpotPhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotPhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		C9A429E82666B1C9002174B1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,11 +116,13 @@
 				C96777FD2692491C005055C8 /* Review.swift */,
 				C96A317E26939EC9002EEEA6 /* Reviews.swift */,
 				C95C0A8926A1FF730029B40B /* Photo.swift */,
+				C98E367B26A8BD870059C6FC /* Photos.swift */,
 				C96E46962666AAF5001027C1 /* LoginViewController.swift */,
 				C97332A62676629F0017109B /* SpotListViewController.swift */,
 				C97332A9267667540017109B /* SpotTableViewCell.swift */,
 				C97332AC267673AE0017109B /* SpotDetailViewController.swift */,
 				C95FCC8A269647F000DBFB1A /* SpotReviewTableViewCell.swift */,
+				C98E367E26A8C50B0059C6FC /* SpotPhotoCollectionViewCell.swift */,
 				C95DEBE2269105BA00163EF3 /* ReviewTableViewController.swift */,
 				C95F024026A0CB570091418C /* PhotoViewController.swift */,
 				C972889D267A7829007EA30D /* UIViewController+alert.swift */,
@@ -281,6 +287,7 @@
 				C96E46932666AAF5001027C1 /* AppDelegate.swift in Sources */,
 				C97332AD267673AE0017109B /* SpotDetailViewController.swift in Sources */,
 				C95DEBE3269105BA00163EF3 /* ReviewTableViewController.swift in Sources */,
+				C98E367C26A8BD870059C6FC /* Photos.swift in Sources */,
 				C978EE19267CFEDB00B5D95B /* Spots.swift in Sources */,
 				C97332AA267667540017109B /* SpotTableViewCell.swift in Sources */,
 				C96777FE2692491C005055C8 /* Review.swift in Sources */,
@@ -292,6 +299,7 @@
 				C96B4FEB26790FCE007C7C7D /* Spot.swift in Sources */,
 				C96E46952666AAF5001027C1 /* SceneDelegate.swift in Sources */,
 				C972889E267A7829007EA30D /* UIViewController+alert.swift in Sources */,
+				C98E367F26A8C50B0059C6FC /* SpotPhotoCollectionViewCell.swift in Sources */,
 				C96A317F26939EC9002EEEA6 /* Reviews.swift in Sources */,
 				C97C37E2269CD62300C6DFEC /* UIView+addBorder.swift in Sources */,
 			);
@@ -444,7 +452,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VX2MDT2DKQ;
 				INFOPLIST_FILE = "Printing-Log-DB/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = VX2MDT2DKQ;
 				INFOPLIST_FILE = "Printing-Log-DB/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
